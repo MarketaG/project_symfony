@@ -1,0 +1,47 @@
+{% extends 'base.html.twig'%}
+{# Titulek #}
+{% block title %}Přihlášení{% endblock %}
+{# Obsah #}
+{% block contenido %}
+<!-- Content -->
+    <br>
+    <div class="container">
+    <h1 class="mt-4 mb-3">
+        <small>Přihlášení uživatele</small>
+    </h1>
+    <div class="row">
+        <div class="col-lg-6">
+            {% if error %}
+                <h3>{{ error.messageKey|trans(error.messageData, 'security') }}</h3>
+            {% endif %}
+            <form action="{{ path('login') }}" method="post">
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <label for="username">Email:</label>
+                        <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}"/>
+                    </div>
+                </div>
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <label for="password">Heslo:</label>
+                        <input class="form-control" type="password" id="password" name="_password"/>
+                    </div>
+                </div>
+                <button class="btn btn-success" type="submit">Přihlásit</button>
+            </form>
+        </div>
+    </div><br><br><br>
+    <div class="container">
+        <div class="row well">
+            <div class="col-lg-8 col-md-8">
+                <h4>Registrace pro správu rezervací</h4>
+                <p>Pokud si chceš vytvořit nový účet a spravovat své rezervace, tak klikni na odkaz. </p>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <a class="btn btn-lg btn-success pull-right" href="{{path('register')}}">Zaregistruj se</a>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+{% endblock %}

@@ -1,0 +1,36 @@
+{# Sablona aplikace #}
+{% extends 'base.html.twig'%}
+{# Titulek #}
+{% block title %}
+    Příspěvek
+{% endblock %}
+{# Obsah #}
+{% block contenido %}
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Příspěvek</h1>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <img class="img-responsive" src="{{asset(tapaImg~tapa.foto)}}" alt="">
+            </div>
+
+            <div class="col-md-4">
+                <h3>{{tapa.name}}</h3>
+                <p>{{tapa.description}}</p>
+                <h3>Ingredience</h3>
+                {{tapa.ingredients}}
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+{% endblock %}

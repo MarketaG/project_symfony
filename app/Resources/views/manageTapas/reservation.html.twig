@@ -1,0 +1,44 @@
+{# Sablona aplikace #}
+{% extends 'base.html.twig'%}
+{# Titulek #}
+{% block title %}Rezervace{% endblock %}
+{# Obsah #}
+{% block contenido %}
+<br><br>
+    <div class="container">
+
+        <h1 class="mt-4 mb-3 page-header">Rezervace</h1>
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Upravit</th>
+                            <th scope="col">Datum</th>
+                            <th scope="col">Počet hostů</th>
+                            <th scope="col">Komentář</th>
+                            <th scope="col">Smazat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for reservation in reservation %}
+                    <tr>
+                        <th scope="row"><a href="{{path('newReservation',{'id':reservation.id})}}"><i class="fa fa-pencil fa-2x" style='color:#48a4ff;margin-left:14px'></i></a></th>
+                        <td>{{ reservation.date|date('Y/m/d h:i')}}</td>
+                        <td>{{ reservation.guests }}</td>
+                        <td>{{ reservation.observations }}</td>
+                        <th scope="row"><a href="#" onclick="return controlDelete('{{path('deleteReservation',{'id':reservation.id})}}','{{ reservation.date|date('Y/m/d h:i')}}');"><i class="fa fa-trash-o fa-2x" style='color:#800000;margin-left:14px'></i></a></th>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div class="col-md-2">
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="{{asset('js/controlDelete.js')}}"></script>
+{% endblock %}

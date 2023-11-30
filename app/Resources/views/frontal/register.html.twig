@@ -1,0 +1,22 @@
+{% extends 'base.html.twig'%}
+{% form_theme form 'form/tapaForm.html.twig' %}
+{# Titulek #}
+{% block title %}Registrace{% endblock %}
+{# Obsah #}
+{% block contenido %}
+    <!-- Content -->
+    <br>
+    <div class="container">
+            <h1 class="mt-4 mb-3">
+                <small>Registrační formulář</small>
+            </h1>
+
+        <div class="row">
+            <div class="col-lg-6">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+        </div>
+
+    </div>
+{% endblock %}

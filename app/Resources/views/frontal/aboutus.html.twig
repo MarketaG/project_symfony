@@ -1,0 +1,54 @@
+{# Sablona aplikace #}
+{% extends 'base.html.twig'%}
+{# Titulek #}
+{% block title %}
+    O nás
+{% endblock %}
+{# Obsah #}
+{% block contenido %}
+    <br><br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">O projektu
+                    <small>Restauračního blogu a rezervačního systémy</small>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+        </div>
+        <div class="section">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <img class="img-responsive" src="{{asset('img/about.png')}}">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <h2>Co webová aplikace umí</h2>
+                        <ul>
+                            <br><br>
+                            <li>Registrovat uživatele na roli user.</li>
+                            <li>Přihlásit uživatele na roli admin nebo user.</li>
+                            <li>Vytvářet rezervace.</li>
+                            <li>Prohlížet rezervace.</li>
+                            <li>Upravovat rezervace.</li>
+                            <li>Mazat rezevace.</li>
+                            <li>Web má svůj jednoduchý blog.</li>
+                            <li>Nové příspěvky smí vkládat pouze role admin.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+        <!-- /.section -->
+
+    </div>
+
+{% endblock %}
